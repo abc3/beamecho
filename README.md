@@ -2,7 +2,7 @@
 
 BeamEcho is a tool that can help you engage with the users of your iOS application. Imagine having a list of users stored in a PostgreSQL database, and you wish to send them targeted marketing messages or other communications. By adding your database as a "source" in BeamEcho, you can utilize SQL queries to send push notifications to specific segments of your audience.
 
-Consider a table named `demo_demo` with the following structure:
+Consider a table named `demo_table` with the following structure:
 
 | id | username     | device_token | current_level | last_visit          | inserted_at         | updated_at          |
 |----|--------------|--------------|---------------|---------------------|---------------------|---------------------|
@@ -26,9 +26,9 @@ The next video will demonstrate how you can remind your users — who haven't vi
 
 In the future, we plan to extend the functionality of BeamEcho in several ways:
 
-1. **Additional Database Sources**: The aim is to support more types of databases as sources, including popular databases like MySQL, MongoDB, and ClickHouse.
+- **Additional Database Sources**: The aim is to support more types of databases as sources, including popular databases like MySQL, MongoDB, and ClickHouse.
 
-2. **Android Push Notifications**: At present, BeamEcho supports sending push notifications to iOS devices. The plan is to extend this support to Android devices as well.
+- **Android Push Notifications**: At present, BeamEcho supports sending push notifications to iOS devices. The plan is to extend this support to Android devices as well.
 
 For feature requests or suggestions, please feel encouraged to open an issue on the GitHub repository. Community contributions and feedback are highly appreciated.
 
