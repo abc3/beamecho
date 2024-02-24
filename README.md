@@ -14,7 +14,7 @@ The next video will demonstrate how you can remind your users — who haven't vi
 <table>
   <tr>
    <td width="77.7%">
-     <video src="https://github.com/abc3/beamecho/assets/1172600/8f7b68c5-b01f-4e95-b012-a5f13d75ffb7" >
+     <video src="https://github.com/abc3/beamecho/assets/1172600/07b3e082-4170-4b87-b12a-cdfe9733bca7" >
    </td>
    <td>
      <video src="https://github.com/abc3/beamecho/assets/1172600/c59fde50-a711-405b-a100-86d7180b5e69">
