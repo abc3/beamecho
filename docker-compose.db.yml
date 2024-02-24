@@ -1,0 +1,15 @@
+
+version: "3"
+
+services:
+  pg-db:
+    image: supabase/postgres:15.1.0.154
+    container_name: bec-db
+    ports:
+      - "6462:5432"
+    volumes:
+      - ./dev/postgres:/docker-entrypoint-initdb.d/
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf
+    environment:
+      POSTGRES_HOST: /var/run/postgresql
+      POSTGRES_PASSWORD: postgres

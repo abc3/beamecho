@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  db:
+    image: supabase/postgres:15.1.0.148
+    container_name: beamecho-db
+    ports:
+      - 6432:5432
+    volumes:
+      - ./dev/postgres:/docker-entrypoint-initdb.d/
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf
+    environment:
+      POSTGRES_HOST: /var/run/postgresql
+      POSTGRES_PASSWORD: postgres
+  beamecho:
+    build: .
+    container_name: beamecho
+    ports:
+      - 8080:4000
+    environment:
+      PORT: 4000
+      DATABASE_URL: "ecto://postgres:postgres@host.docker.internal:6432/postgres"
+      SECRET_KEY_BASE: "12345678901234567890121234567890123456789012345678903212345678901234567890123456789032123456789012345678901234567890323456789032"
+      VAULT_ENC_KEY: "your_new_32_length_secure_string"
+      CHECK_QUEUE_INTERVAL: 10000
+      ERL_AFLAGS: -proto_dist inet_tcp
+    command:  sh -c "/app/bin/migrate && /app/bin/server"
+    depends_on:
+      - db
